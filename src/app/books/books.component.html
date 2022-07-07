@@ -1,1 +1,16 @@
-<p>books works!</p>
+<h2>Programming books list</h2> 
+<button (click) = "handleClick()" [disabled] = "isDisabled">Show books</button>
+<!-- click is an Event -->
+<!-- handleClick() is a Function -->
+
+
+<!-- interpolation is not recommended, we have to use Property binding-->
+<ul>
+
+    <img [src]="src" [alt]="name" width="100">   
+     <li>{{name}} by {{author}}</li>
+
+     <img [src]="src2" alt="name2"width="100">   
+     <li>{{name2}} by {{author2}}</li>
+</ul>
+
