@@ -1,8 +1,19 @@
 <h2>Programming books list</h2> 
 <button (click) = "handleClick()" [disabled] = "isDisabled">Show books</button>
-<!-- click is an Event -->
+<!-- (click) is an Event -->
 <!-- handleClick() is a Function -->
 
+
+<!-- 
+Angular has two way binding 
+(click) it is event binding 
+& 
+[disabled] it is called attribute or property binding (square Brakets)
+-->
+<input type="text" [(ngModel)]="myName"/>  
+<!-- instend of using function handleInput($event) we can use only property name  -->
+<!-- ngModel can bind value and input -->
+<div>{{myName}}</div>
 
 <!-- interpolation is not recommended, we have to use Property binding-->
 <ul>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TitleStrategy } from '@angular/router';
 
 @Component({
   selector: 'app-books',
@@ -17,17 +18,25 @@ export class BooksComponent implements OnInit {
   isDisabled:boolean = false; 
 
   constructor() { }
-
   ngOnInit(): void {
   }
-
 
   //function... 
   handleClick(){
      //alert("clicked");
      //this.isDisabled = true; 
-
-
   }
+  myName:string = '';
+  
+  /**
+   * //So without that below function we can perform Two way binding... 
+   *  
+   * handleInput(event: any){
+    //alert('hi'); 
+    //console.log(event.target.value);
+    this.myName = event.target.value; 
+  }
+   */
+  
 
 }
