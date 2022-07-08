@@ -15,7 +15,9 @@ export class BooksComponent implements OnInit {
   author2:string  ='Felix Halim'; 
   src2:string = 'https://images.booksense.com/images/515/745/9781716745515.jpg';
 
-  isDisabled:boolean = false; 
+  //isDisabled:boolean = false; 
+
+  isShowing:boolean = true; 
 
   constructor() { }
   ngOnInit(): void {
@@ -26,7 +28,7 @@ export class BooksComponent implements OnInit {
      //alert("clicked");
      //this.isDisabled = true; 
   }
-  myName:string = '';
+  //myName:string = '';
   
   /**
    * //So without that below function we can perform Two way binding... 
@@ -38,5 +40,10 @@ export class BooksComponent implements OnInit {
   }
    */
   
+  toggleBooks(){
+    //if isShowing is true,then make it false 
+    //if isShowing is false,then make it true
+    this.isShowing = !this.isShowing; 
+  }
 
 }
