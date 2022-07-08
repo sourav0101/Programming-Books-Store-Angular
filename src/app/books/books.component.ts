@@ -40,10 +40,10 @@ export class BooksComponent implements OnInit {
   }
    */
   
-  toggleBooks(){
+  //toggleBooks(){
     //if isShowing is true,then make it false 
     //if isShowing is false,then make it true
-    this.isShowing = !this.isShowing; 
-  }
+    //this.isShowing = !this.isShowing; 
+  //}
 
 }

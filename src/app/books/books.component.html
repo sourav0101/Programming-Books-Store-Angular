@@ -1,5 +1,10 @@
 <h2>Programming books list</h2> 
-<button (click)="toggleBooks()">Toggle Books</button>
+<button (click)="isShowing = !isShowing">
+    <span *ngIf="!isShowing">Show Books</span>
+    <span *ngIf="isShowing">Hide Books</span>
+    
+    
+</button>
 
 <!-- <button (click) = "handleClick()" [disabled] = "isDisabled">Show books</button> -->
 <!-- (click) is an Event -->
