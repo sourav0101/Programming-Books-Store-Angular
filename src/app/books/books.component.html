@@ -1,9 +1,8 @@
 <h2>Programming books list</h2> 
 <button (click)="isShowing = !isShowing">
-    <span *ngIf="!isShowing">Show Books</span>
-    <span *ngIf="isShowing">Hide Books</span>
-    
-    
+    <ng-container *ngIf="!isShowing">Show Books</ng-container>
+    <ng-container *ngIf="isShowing">Hide Books</ng-container>
+       
 </button>
 
 <!-- <button (click) = "handleClick()" [disabled] = "isDisabled">Show books</button> -->
@@ -27,10 +26,13 @@ Angular has two way binding
 <!-- interpolation is not recommended, we have to use Property binding-->
 <ul *ngIf="isShowing">
 
-    <img [src]="src" [alt]="name" width="100">   
-     <li>{{name}} by {{author}}</li>
-
-     <img [src]="src2" alt="name2"width="100">   
-     <li>{{name2}} by {{author2}}</li>
+    <ng-container *ngFor="let book of book; let i = index">
+        <li>
+            {{i+1}}
+            <img [src]="book.image" [alt]="book.name" width="100"/>   
+        {{book.name}} by {{book.author}}
+        </li>     
+    </ng-container>
+        
 </ul>
 
