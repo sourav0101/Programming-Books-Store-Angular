@@ -1,9 +1,12 @@
 <h2>Programming books list</h2> 
+
+<!--
 <button (click)="isShowing = !isShowing">
     <ng-container *ngIf="!isShowing">Show Books</ng-container>
     <ng-container *ngIf="isShowing">Hide Books</ng-container>
        
 </button>
+--> 
 
 <!-- <button (click) = "handleClick()" [disabled] = "isDisabled">Show books</button> -->
 <!-- (click) is an Event -->
@@ -25,16 +28,20 @@ Angular has two way binding
 
 <!-- interpolation is not recommended, we have to use Property binding-->
 <ul *ngIf="isShowing">
-    <ng-container *ngFor="let book of book; let i = index">
-        <li class = "book">
-           <p class = "sno"> {{i+1}} </p> 
-            <img [src]="book.image" [alt]="book.name" width="100"/>   
-        <p class = "title">{{book.name | titlecase }} by {{book.author | titlecase}} </p>
-        <!-- pipe sign is | -->
-        <!-- titlecase make it title formate-->
-        <p class = "currency">{{book.amount | currency:'USD' }}</p>
+    <ng-container *ngFor="let singleBook of book; let i = index">
+    <app-book (bookEmitter)="addToCart($event)" [book]="singleBook"></app-book>
+
+    <!-- by passing $event we can get whatever info we have in the EVENT -->
+    <!-- Here,-->
+    <!-- 
+        [book] is a book property 
+        inside the <app-book></app-book> (component)
+        is having the value of singleBook object...  
         
-        </li>     
+    -->
+
+    <!-- Here,-->
+    <!-- book (variable)="book(variable name)"-->
     </ng-container>
         
 </ul>

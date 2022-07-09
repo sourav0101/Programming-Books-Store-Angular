@@ -1,6 +1,6 @@
 ul{
     display: flex; /** line e show korbe **/ 
-    flex-warp:warp; 
+    flex-warp :warp; 
 }
 .book{
     list-style:none;/** dot gone **/ 

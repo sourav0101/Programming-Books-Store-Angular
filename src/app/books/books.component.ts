@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TitleStrategy } from '@angular/router';
+import { Book } from '../types/Book';
 
-interface Book {
-  name:string; 
-  author:string; 
-  image:string; 
-  amount:number; 
-}
+
 
 @Component({
   selector: 'app-books',
@@ -38,19 +34,21 @@ export class BooksComponent implements OnInit {
     
   ];
 
-  
+  //making object  cart 
+
+  cart: Book[] = [];  
 
   //isDisabled:boolean = false; 
 
   isShowing:boolean = true; 
 
   constructor() { }
-
-
-
-
-
   ngOnInit(): void {
+  }
+
+
+  addToCart(book:Book){ 
+    console.log(book); //why book,cause we have passed book obj/info 
   }
 
   //function... 
