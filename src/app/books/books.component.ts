@@ -1,4 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+/** 
+ * Lifecycle Hooks:
+----------------
+Whenever you have a component and when you create the new class of the 
+component,then after that it load the template,it load the child component.. 
+so at every step you can have Hook...
+
+so means that you can do every step something.
+so its a life cycle of a Component... 
+
+*the life cycle continues with change detection,as angular check to see data-bound 
+properties change,update both the view and component instance as needed. 
+
+*The life cycle ends when Angular destroys the Component instance and removes its 
+randered template from the DOM. 
+ * 
+ * 
+ */
+
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TitleStrategy } from '@angular/router';
 import { Book } from '../types/Book';
 
@@ -9,6 +28,8 @@ import { Book } from '../types/Book';
   templateUrl: './books.component.html',
   styleUrls: ['./books.component.css']
 })
+
+//Class 
 
 export class BooksComponent implements OnInit {
   //book array 
@@ -42,13 +63,25 @@ export class BooksComponent implements OnInit {
 
   isShowing:boolean = true; 
 
-  constructor() { }
-  ngOnInit(): void {
+  constructor() {  //When class is initiated automatically constructor called. 
+                   //firstly call
+    console.log({constructor:'constructor'}); 
   }
+
+  ngOnInit(): void { 
+    //ngOnInit need when the component is actually ready to be mounted 
+    //on the HTML or the DOM  //thats why it is called after the constructor. 
+    //secondly call.
+    console.log({onInit:'onInit'})
+  }
+
+ 
 
 
   addToCart(book:Book){ 
-    console.log(book); //why book,cause we have passed book obj/info 
+    console.log(book); 
+    //why book,cause we have passed book obj/info 
+    //
   }
 
   //function... 
