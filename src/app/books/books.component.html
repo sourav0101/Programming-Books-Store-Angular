@@ -25,12 +25,15 @@ Angular has two way binding
 
 <!-- interpolation is not recommended, we have to use Property binding-->
 <ul *ngIf="isShowing">
-
     <ng-container *ngFor="let book of book; let i = index">
-        <li>
-            {{i+1}}
+        <li class = "book">
+           <p class = "sno"> {{i+1}} </p> 
             <img [src]="book.image" [alt]="book.name" width="100"/>   
-        {{book.name}} by {{book.author}}
+        <p class = "title">{{book.name | titlecase }} by {{book.author | titlecase}} </p>
+        <!-- pipe sign is | -->
+        <!-- titlecase make it title formate-->
+        <p class = "currency">{{book.amount | currency:'USD' }}</p>
+        
         </li>     
     </ng-container>
         
