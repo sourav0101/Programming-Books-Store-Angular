@@ -13,7 +13,7 @@ import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [AppComponent, CartComponent],
-  imports: [BrowserModule, FormsModule, BooksModule], // FormsModule import korsi.
+  imports: [BrowserModule, FormsModule, BooksModule, AppRoutingModule], // FormsModule import korsi.
   bootstrap: [AppComponent],
 })
 export class AppModule {}
