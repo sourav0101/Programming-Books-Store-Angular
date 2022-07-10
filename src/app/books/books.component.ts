@@ -20,6 +20,7 @@ randered template from the DOM.
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TitleStrategy } from '@angular/router';
 import { Book } from '../types/Book';
+import { BooksService } from './books.service';
 
 
 
@@ -32,52 +33,22 @@ import { Book } from '../types/Book';
 //Class 
 
 export class BooksComponent implements OnInit {
-  //book array 
-  book :Book[] = [
-    {
-      name: 'introduction to algorithms',
-      author :'ronald l. rivest', 
-      image: 'https://m.media-amazon.com/images/I/41SNoh5ZhOL._AC_SY1000_.jpg',
-      amount: 200, 
-    },
-    {
-      name: 'competitive programming 4', 
-      author: 'felix halim',
-      image: 'https://images.booksense.com/images/515/745/9781716745515.jpg',
-      amount: 205,
-    },
-    {
-      name: 'introduction to machine learning with python', 
-      author: 'andreas Müller',
-      image: 'https://images-na.ssl-images-amazon.com/images/I/710aLBwkr7L.jpg',
-      amount: 400,
-    }
-    
-  ];
+  //books array 
+  books :Book[] = []; //Holding all books Data.
+  constructor(private booksService: BooksService) {} //this is called Depandancy Injection.
+  //bookService is a private variable,which is gonna have BookService class instance
+
+
 
   //making object  cart 
-
   cart: Book[] = [];  
-
-  //isDisabled:boolean = false; 
-
   isShowing:boolean = true; 
-
-  constructor() {  //When class is initiated automatically constructor called. 
-                   //firstly call
-    console.log({constructor:'constructor'}); 
-  }
-
-  ngOnInit(): void { 
-    //ngOnInit need when the component is actually ready to be mounted 
-    //on the HTML or the DOM  //thats why it is called after the constructor. 
-    //secondly call.
-    console.log({onInit:'onInit'})
+  ngOnInit(): void 
+  { 
+    this.books = this.booksService.getBooks(); 
   }
 
  
-
-
   addToCart(book:Book){ 
     console.log(book); 
     //why book,cause we have passed book obj/info 

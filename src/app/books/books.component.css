@@ -2,11 +2,13 @@ ul{
     display: flex; /** line e show korbe **/ 
     flex-warp :warp; 
 }
-.book{
+.books{
     list-style:none;/** dot gone **/ 
     text-overflow: ellipsis;
     width: 25%;
     text-align: center;
     cursor: pointer;
+    
 
 }
+
