@@ -34,10 +34,12 @@ import { BooksService } from './books.service';
 
 export class BooksComponent implements OnInit {
   //books array 
-  books :Book[] = []; //Holding all books Data.
-  constructor(private booksService: BooksService) {} //this is called Depandancy Injection.
+  books :Book[] = []; 
+  constructor(private booksService: BooksService) {}
+  //constructor(private booksService: BooksService) {} //this is called Depandancy Injection.
   //bookService is a private variable,which is gonna have BookService class instance
-
+  
+  
 
 
   //making object  cart 
