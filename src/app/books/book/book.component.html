@@ -5,6 +5,11 @@
   <!-- pipe sign is | -->
   <!-- titlecase make it title formate-->
   <p class = "currency">{{book.amount | currency:'USD' }}</p>
-  <button (click) = "addToCart()">Add to cart</button>
+
+
+  <!-- When book is not in Cart,this button will show -->
+  <button *ngIf = "!isInCart" (click) = "addToCart()">Add to Cart</button> <!-- if -->
+  <!-- When book is already in Cart,this button will show -->  
+  <button *ngIf = "isInCart" (click) = "removeFromCart()">Remove from Cart</button> <!-- if -->
   
   </li>     

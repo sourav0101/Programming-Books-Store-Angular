@@ -43,7 +43,7 @@ export class BooksComponent implements OnInit {
 
 
   //making object  cart 
-  cart: Book[] = [];  
+ // cart: Book[] = [];  
   isShowing:boolean = true; 
   ngOnInit(): void 
   { 
@@ -51,11 +51,11 @@ export class BooksComponent implements OnInit {
   }
 
  
-  addToCart(book:Book){ 
-    console.log(book); 
+  //addToCart(book:Book){ 
+  //  console.log(book); 
     //why book,cause we have passed book obj/info 
     //
-  }
+ // }
 
   //function... 
   //handleClick(){

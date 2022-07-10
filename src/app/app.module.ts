@@ -8,10 +8,11 @@ import { BooksComponent } from './books/books.component';
 import { BookComponent } from './books/book/book.component';
 import { BooksModule } from './books/books.module';
 import { BooksService } from './books/books.service';
+import { CartComponent } from './cart/cart.component';
 //import { SouravDasComponent } from './sourav-das/sourav-das.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, CartComponent],
   imports: [BrowserModule, FormsModule, BooksModule], // FormsModule import korsi.
   bootstrap: [AppComponent],
 })
