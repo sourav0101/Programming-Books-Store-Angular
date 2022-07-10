@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 
-@Injectable({ 
-  //Injectable means we can use the service from the service container. 
-  providedIn: 'root',
-})
+@Injectable()
+//Injectable means we can use the service from the service container. 
+
 export class BooksService {
 
   constructor() { }

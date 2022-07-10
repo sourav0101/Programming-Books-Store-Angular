@@ -47,7 +47,7 @@ export class BooksComponent implements OnInit {
   isShowing:boolean = true; 
   ngOnInit(): void 
   { 
-    this.books = this.booksService.getBooks(); 
+    this.books = this.booksService.getBooks(); //data came from books.service
   }
 
  
