@@ -9,11 +9,12 @@ import { BookComponent } from './books/book/book.component';
 import { BooksModule } from './books/books.module';
 import { BooksService } from './books/books.service';
 import { CartComponent } from './cart/cart.component';
+import { AuthModule } from './auth/auth.module';
 //import { SouravDasComponent } from './sourav-das/sourav-das.component';
 
 @NgModule({
   declarations: [AppComponent, CartComponent],
-  imports: [BrowserModule, FormsModule, BooksModule, AppRoutingModule], // FormsModule import korsi.
+  imports: [BrowserModule, BooksModule, AppRoutingModule, AuthModule], // FormsModule import korsi.
   bootstrap: [AppComponent],
 })
 export class AppModule {}
