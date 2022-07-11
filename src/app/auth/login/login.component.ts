@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginForm } from 'src/app/types/Auth';
 
 @Component({
   selector: 'app-login',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  email:string = '';
+  form: LoginForm = {
+    email: '',
+    password: '', 
+  };
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  submit()
+  {
+    console.log(this.form); //form e ja thakebe. 
   }
 
 }
