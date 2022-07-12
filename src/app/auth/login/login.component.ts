@@ -1,25 +1,37 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginForm } from 'src/app/types/Auth';
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { AuthService } from '../auth.service';
+
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+
+
+
+//Class
+export class LoginComponent implements OnInit 
+{
   form: LoginForm = {
     email: '',
     password: '', 
   };
 
-  constructor() { }
+  
+  constructor(private authService: AuthService) { }
+  ngOnInit(): void { }
 
-  ngOnInit(): void {
-  }
-
+  //Submit function 
   submit()
-  {
-    console.log(this.form); //form e ja thakebe. 
+  { 
+    this.authService.login(this.form); 
   }
-
+  isLoading()
+  {
+    return this.authService.isLoading; 
+  }
+ 
 }
