@@ -29,9 +29,9 @@ Angular has two way binding
 <!--- <div>{{myName}}</div> -->
 
 <!-- interpolation is not recommended, we have to use Property binding-->
-<ul *ngIf="isShowing">
+<ul *ngIf="isShowing" class="flex flex-wrap justify-center">
     <ng-container *ngFor="let singleBook of books; let i = index">
-    <app-book [book]="singleBook"></app-book>
+    <app-book [book]="singleBook" class="w-1/2 p-5 text-center"></app-book>
 
     <!-- by passing $event we can get whatever info we have in the EVENT -->
     <!-- Here,-->

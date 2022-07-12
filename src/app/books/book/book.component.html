@@ -1,15 +1,21 @@
-<li class = "book">
+<li class = "flex border rounded-xl h-60">
+
     <!-- <p class = "sno"> {{i+1}} </p> --> 
-  <img [src]="book.image" [alt]="book.name" width="100"/>   
-  <p class = "title">{{book.name | titlecase }} by {{book.author | titlecase}} </p>
-  <!-- pipe sign is | -->
-  <!-- titlecase make it title formate-->
-  <p class = "currency">{{book.amount | currency:'USD' }}</p>
+    <img [src]="book.image" [alt]="book.name" width="150" class="m-auto rounded-sm"/>
+      
+    <div class="m-auto font-thin	font-semibold	">
 
+      <p class = "title">{{book.name | titlecase }} by {{book.author | titlecase}} </p>
+      <!-- pipe sign is | -->
+      <!-- titlecase make it title formate-->
+      <p class = "currency text-blue-600/100 text-lg">{{book.amount | currency:'USD' }}</p>
+      <!-- When book is not in Cart,this button will show -->
 
-  <!-- When book is not in Cart,this button will show -->
-  <button *ngIf = "!isInCart" (click) = "addToCart()">Add to Cart</button> <!-- if -->
-  <!-- When book is already in Cart,this button will show -->  
-  <button *ngIf = "isInCart" (click) = "removeFromCart()">Remove from Cart</button> <!-- if -->
-  
+      <button class="bg-yellow-400 rounded p-3" *ngIf = "!isInCart" (click) = "addToCart()">Add to Cart</button> <!-- if -->
+      <!-- When book is already in Cart,this button will show -->  
+      <button class="bg-red-500 rounded p-3  text-white" *ngIf = "isInCart" (click) = "removeFromCart()">Remove from Cart</button> <!-- if -->
+        
+
+    </div>
+
   </li>     
